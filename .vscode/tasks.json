@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run JavaScript file",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-c",
+        "node ${file} < ${fileDirname}/input.txt > ${fileDirname}/output.txt"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
