@@ -51,8 +51,7 @@ these steps from scratch every time.
             "command": "bash",
             "args": [
                 "-c",
-                "node ${file} < ${fileDirname}/input.txt > ${fileDirname}
-                /output.txt"
+                "node ${file} < ${fileDirname}/input.txt > ${fileDirname}/output.txt"
             ],
             "group": {
                 "kind": "build",
