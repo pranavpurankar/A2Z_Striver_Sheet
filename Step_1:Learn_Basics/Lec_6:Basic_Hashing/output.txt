@@ -1,1 +1,1 @@
-Input received: Hello Pranav
+Output: 0
