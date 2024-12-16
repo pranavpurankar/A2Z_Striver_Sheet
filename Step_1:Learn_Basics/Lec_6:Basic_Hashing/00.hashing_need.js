@@ -2,6 +2,7 @@
 
 /* 
 What is Hashing?
+
 Hashing is a technique used to map data to a specific location (or index) for
 quick access. It combines pre-storing and fetching operations. In simple terms
 hashing involes:
@@ -11,7 +12,8 @@ hashing involes:
     2. Fetching: Directly retrieving stored information without recalculating 
                     every time.
 
-Brute-Froce Approach
+
+Brute-Force Approach
 
 Problem:
     Given an array of integers, determine the frequency of specific elements
@@ -22,6 +24,7 @@ Approach:
     count the occurrences of the query element.
 
 Algorithm:
+
     1.For each query, loop through the array and count how many times the query 
     matches an element.
 
@@ -224,6 +227,12 @@ function hashing(arr){
     return hashedArray;
 }
 
+const arrNew = [1,2,3,3,1,5,12];
+const hashMap = hashing(arrNew);
+console.log("Value of 01:",hashMap.get(1));
+console.log("Value of 03:",hashMap.get(3));
+console.log("Value of 10:",hashMap.get(10));
+
 /* 
 Step 2: Understanding the set() and get() Methods
 
@@ -249,3 +258,31 @@ This is the key part of the logic.
         • If hashedArray.get(element) returns undefined (element not in Map), we treat its frequency as 0 (since it hasn’t appeared yet).
         • This ensures the program doesn’t break when dealing with new elements.
 */
+
+
+/* 
+Handling Large Values Efficiently:
+When array elements are very large, we cannot use them as indices (e.g. 10^7)
+Instead:
+    1. Use a Map for dynamic keys.
+    2. Or apply a hash function to reduce the size of the hash space.
+*/
+
+function hashLargeValues(arr, queries){
+    const hash = new Map();
+
+    // Precompute using a hash function (modulo division)
+    for (const num of arr){
+        const key = num % 1000; // Reduce the size of hash space
+        hash.set(key, (hash.get(key) || 0) + 1);
+    }
+
+    // Fetch results
+    const results = queries.map(query => hash.get(query % 1000) || 0);
+    return results;
+}
+
+// Example usage:
+const arrLarge = [1000000001, 1000000002, 1000000003];
+const queriesLarge = [1000000001, 1000000005];
+console.log(hashLargeValues(arrLarge,queriesLarge));
