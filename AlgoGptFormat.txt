@@ -1,0 +1,46 @@
+I need explanation for the below, use simple english easy to understand
+analogy, and the questions mentioned below also you can take reference 
+for the output from the previous chats.
+
+• Algorithm name: "name_of_algorithm"
+
+• Explain what is the "algorithm_name"?
+
+
+• Provide pseudocode in plaintext as well as like below format in the
+  same row with two side by side column. (Below is just example)
+
+    Plaintext:
+        function insertionSort(array):
+        for i from 1 to length(array) - 1:
+            key = array[i]
+            j = i - 1
+            while j >= 0 and array[j] > key:
+                array[j + 1] = array[j]
+                j = j - 1
+            array[j + 1] = key
+        return array
+
+    PseudoCode:
+        function insertionSort(array):
+        for i from 1 to length(array) - 1:
+            key = array[i]
+            j = i - 1
+            while j >= 0 and array[j] > key:
+                array[j + 1] = array[j]
+                j = j - 1
+            array[j + 1] = key
+        return array
+
+
+• Steps to visualize and with example visualization
+
+• Code Example
+
+• What is the time complexity and space Complexity? Step wise mathematical
+  explanation of time and space complexity.
+
+• Practise Exercise
+
+• Is there any optimization way available? Only provide answer if
+there is any optimization available else leave this.
