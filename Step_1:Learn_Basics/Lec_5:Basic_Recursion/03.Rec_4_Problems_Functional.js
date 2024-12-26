@@ -40,8 +40,9 @@ MADAM   -> MADAM
 function checkPalidrome(i,strg){
     let n = strg.length;
     if(i >= n/2) return true;
-    if(strg[i] !== n - strg[i]- 1) return false;
+    if(strg[i] !== strg[n- i - 1]) return false;
+    console.log(strg[i])
     return checkPalidrome(i+1, strg);
 }
 
-console.log("Check Palindrom",checkPalidrome(0,"MADAM"));
+console.log("Check Palindrom",checkPalidrome(0,"MADASM"));
