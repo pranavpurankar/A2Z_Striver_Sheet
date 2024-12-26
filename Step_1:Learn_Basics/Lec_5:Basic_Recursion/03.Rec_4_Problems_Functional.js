@@ -21,15 +21,27 @@ function optimizedApproach(arr){
         let temp = arr[p1];
         arr[p1] = arr[p2];
         arr[p2] = temp;
-        p1++,p2--
+        p1++,p2--;
     }
     return arr;
 }
 
 console.log(optimizedApproach(arr));
 
-// Approach_3: Recursive method
-// function reverseArray(arr, start, end){
-//     let n = arr.length;
 
-// }
+/* 
+Check if the given string is palindrome or not?
+Palindrome: A string on reversal reads the same.
+
+MADAM   -> MADAM
+"11211" -> "11211"
+*/
+
+function checkPalidrome(i,strg){
+    let n = strg.length;
+    if(i >= n/2) return true;
+    if(strg[i] !== n - strg[i]- 1) return false;
+    return checkPalidrome(i+1, strg);
+}
+
+console.log("Check Palindrom",checkPalidrome(0,"MADAM"));
