@@ -1,5 +1,4 @@
-// Prefer chatGpt response, it is accurate and based on JS
-// Striver explained in excellent manner, but js -> chtgpt
+
 
 let arr = [3,1,2,4,1,5,6,2,4];
 
